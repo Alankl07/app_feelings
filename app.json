@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "app_feelings",
+    "name": "Feelings",
     "slug": "app_feelings",
     "version": "1.0.0",
     "orientation": "portrait",
@@ -8,7 +8,7 @@
     "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "#9095FF"
     },
     "updates": {
       "fallbackToCacheTimeout": 0
@@ -22,8 +22,9 @@
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
-        "backgroundColor": "#FFFFFF"
-      }
+        "backgroundColor": "#9095FF"
+      },
+      "package": "com.alankl07.app_feelings"
     },
     "web": {
       "favicon": "./assets/favicon.png"
