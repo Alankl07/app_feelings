@@ -17,6 +17,6 @@ $ cd app_feelings
 # Instalando as dependências.
 $ yarn install
 
-# Execute a aplicação.
+# Executando a aplicação.
 $ expo start 
 ```
