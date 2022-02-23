@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { View, Text, Image, TouchableOpacity, ScrollView } from "react-native";
 import HomeModal from "../../components/home/modal";
 import { FEELINGS } from "../../constants/feeling";
+import { SCREEN } from "../../constants/screen-constants";
 import { Feeling } from "../../interfaces/feeling-interface";
 
 import styles from './styles';

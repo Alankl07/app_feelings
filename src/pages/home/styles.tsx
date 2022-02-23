@@ -2,6 +2,12 @@ import { StyleSheet, StatusBar } from "react-native";
 import { COLORS } from "../../constants/colors";
 import { SCREEN } from "../../constants/screen-constants";
 
+const width = () => {
+    if(SCREEN.WIDTH <= 320) return 130
+
+    return 150
+}
+
 export default StyleSheet.create({
 
     container:{
@@ -40,11 +46,11 @@ export default StyleSheet.create({
         justifyContent: 'space-between',  
         flexDirection: 'row', 
         flexWrap: 'wrap',
-        paddingHorizontal: 10,
+        paddingHorizontal: 10
     },
 
     card:{
-        width: 150,
+        width: width(),
         height: 150,
         backgroundColor: '#fff',
         elevation: 5,

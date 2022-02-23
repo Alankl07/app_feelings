@@ -2,6 +2,12 @@ import { StyleSheet } from "react-native";
 import { COLORS } from "../../../constants/colors";
 import { SCREEN, WINDOW } from "../../../constants/screen-constants";
 
+const height_modal = () => {
+    if(SCREEN.HEIGHT <= 534) return 1.05
+
+    return 1.2
+}
+
 export default StyleSheet.create({
 
     container: {
@@ -14,7 +20,7 @@ export default StyleSheet.create({
     },
 
     contant: {
-        height: SCREEN.HEIGHT / 1.2,
+        height: SCREEN.HEIGHT / height_modal(),
         width: SCREEN.WIDTH,
         alignSelf: 'flex-end',
         paddingHorizontal: 10,

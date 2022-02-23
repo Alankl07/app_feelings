@@ -6,6 +6,7 @@ import styles from './styles';
 import { HomeModalInterface } from "../../../interfaces/homeModal-interface";
 import * as Speech from "expo-speech";
 import { COLORS } from "../../../constants/colors";
+import { SCREEN } from "../../../constants/screen-constants";
 
 const HomeModal = ({ setOpenModal, feelingSelected }: HomeModalInterface) => {
 
@@ -50,6 +51,11 @@ const HomeModal = ({ setOpenModal, feelingSelected }: HomeModalInterface) => {
         return false
     }
 
+    function heigth_movie(){
+        if(SCREEN.HEIGHT <= 534) return 150
+        return 200
+    }
+
     function componentInfo() {
         if (mode == 'movie') {
             stopSpeak()
@@ -57,7 +63,7 @@ const HomeModal = ({ setOpenModal, feelingSelected }: HomeModalInterface) => {
                 <View style={styles.viewWebView} >
                     <Text style={[styles.textViewWeb, { color: COLORS.WHITE }]} >Carregando video ...</Text>
                     <YoutubeIframe
-                        height={200}
+                        height={heigth_movie()}
                         play={true}
                         videoId={feelingSelected?.movie}
                     />
@@ -101,15 +107,14 @@ const HomeModal = ({ setOpenModal, feelingSelected }: HomeModalInterface) => {
                     <View style={styles.more} >
                         <TouchableOpacity style={mode == 'read' || !mode ? styles.buttonMoreSelected : styles.buttonMore} onPress={() => setMode('read')} >
                             <Feather name="file-text" size={24} color="black" />
-                            {/* <Text>Ler</Text> */}
                         </TouchableOpacity>
+
                         {findMoview() && <TouchableOpacity style={mode == 'movie' ? styles.buttonMoreSelected : styles.buttonMore} onPress={() => setMode('movie')} >
                             <Feather name="video" size={24} color="black" />
-                            {/* <Text>Ver</Text> */}
                         </TouchableOpacity>}
+
                         <TouchableOpacity style={mode == 'audio' ? styles.buttonMoreSelected : styles.buttonMore} onPress={() => speak()} >
                             <Feather name="play" size={24} color="black" />
-                            {/* <Text>Ouvir</Text> */}
                         </TouchableOpacity>
                     </View>
                     <View style={styles.viewButton} >
