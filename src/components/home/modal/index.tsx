@@ -17,12 +17,12 @@ const HomeModal = ({ setOpenModal, feelingSelected }: HomeModalInterface) => {
         return () => ac.abort();
     }, [])
 
-    function loadApp(){
-        if(AppState.currentState != 'active'){
+    function loadApp() {
+        if (AppState.currentState != 'active') {
             stopSpeak()
         }
 
-        if(AppState.currentState == 'active'){
+        if (AppState.currentState == 'active') {
             setMode('')
         }
     }
@@ -115,7 +115,7 @@ const HomeModal = ({ setOpenModal, feelingSelected }: HomeModalInterface) => {
                     <View style={styles.viewButton} >
                         <TouchableOpacity style={styles.button} onPress={() => {
                             setOpenModal(),
-                            stopSpeak()
+                                stopSpeak()
                         }} >
                             <Text style={styles.textButton} >VOLTAR</Text>
                         </TouchableOpacity>
